@@ -1,7 +1,7 @@
 
 # Lokma Food Donation System — UML Class Diagram
 
-This diagram describes the entities, inheritance, relationships, and operations of the food donation system.
+This diagram describes the entities, inheritance, relationships, and operations of Lokma food donation system.
 
 ```mermaid
 classDiagram
@@ -130,6 +130,21 @@ class MoneyDonation {
   +ProcessPayment()
 }
 
+class DonationStatus {
+      <<enumeration>>
+      Created
+      Matched
+      Accepted
+      PickedUp
+      SafetyChecked
+      Delivered
+      Confirmed
+      Rejected
+      Expired
+      Cancelled
+  }
+
+Donation --> DonationStatus : has status
 Donation <|-- FoodDonation
 Donation <|-- MoneyDonation
 Donor "1" --> "0..*" Donation : creates
