@@ -337,4 +337,37 @@ class SupportTicket {
 
 User "1" --> "0..*" SupportTicket : submits
 Admin "0..1" --> "0..*" SupportTicket : handles
+
+%% System & External Service Interfaces
+class IMapService {
+  <<interface>>
+  +CalculateDistance(String source, String destination)
+  +GetDirections(String location)
+}
+
+class IPaymentService {
+  <<interface>>
+  +ProcessPayment(Decimal amount, String token)
+  +VerifyTransaction(String transactionReference)
+}
+
+class INotificationService {
+  <<interface>>
+  +SendPushNotification(Guid userId, String message)
+  +SendSMS(String phone, String message)
+  +SendEmail(String email, String subject, String body)
+}
+
+class IBackgroundJobService {
+  <<interface>>
+  +ScheduleJob(Action task, TimeSpan delay)
+  +ScheduleRecurringJob(String jobId, Action task, String cronExpression)
+}
+
+class IQRCodeService {
+  <<interface>>
+  +GenerateQRCode(String referenceData)
+  +ValidateQRCode(String qrCodeReference)
+}
+
 ```
