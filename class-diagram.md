@@ -205,7 +205,6 @@ class PickupVerification {
   <<entity>>
   +Guid Id
   +String QRCodeReference
-  +String OTPReference
   +DateTime ExpiresAt
   +DateTime UsedAt
   +Boolean IsUsed
