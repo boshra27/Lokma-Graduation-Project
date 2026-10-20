@@ -106,7 +106,6 @@ class Donation {
   +Guid Id
   +DateTime CreatedAt
   +DateTime ExpiresAt
-  +String Status
   +String PhotoUrl
   +Cancel()
   +Expire()
@@ -144,7 +143,7 @@ class DonationStatus {
       Cancelled
   }
 
-Donation --> DonationStatus : has status
+FoodDonation --> DonationStatus : has status
 Donation <|-- FoodDonation
 Donation <|-- MoneyDonation
 Donor "1" --> "0..*" Donation : creates
